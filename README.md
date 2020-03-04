@@ -1,11 +1,12 @@
 # Título del trabajo
 
-Descripción breve del proyecto a realizar (2-3 frases).
+Tabla Periódica.
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+David Carrillo Rodríguez(Carri0202), Javier Palomeque Carrillo(JaviPalomeque) e Iker Gorospe Mateos(IkertxoGM).
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
+Trabajo sobre la tabla periódica y sobre sus características más determinantes como la masa atómica, número atómico, grupo y
+periodo en el que se encuentra y breve descripción.
