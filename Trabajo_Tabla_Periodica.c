@@ -1,7 +1,121 @@
 #include <stdio.h>
 #include <string.h>
 
+//Trabajo que busca informar sobre datos de la tabla periódica con introdución de elemento
+//mostrando la tabla y datos.
+
+
+
+struct TElemento {
+	
+	char elemento[3];
+};
+
 int main(){
+	
+	int k,nelemento = 0;
+	
+	FILE*pfichero;
+	//------------------------------------------------------------------------------	
+	pfichero = fopen("Tabla.txt","r");
+	
+	if(pfichero == NULL){
+		
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+	
+	while(fscanf(pfichero, "%s" , clase[nelemento].elemento) != EOF){
+		
+		nelemento++;
+		
+	}
+	
+	// Utilizamos un solo iterador puesto que hacemos un solo vector de estructuras con una sola clase
+	
+	fclose(pfichero);
+	
+	printf("%s",clase[0].elemento);// Los dos primeros elementos los escribimos fuera del 
+	printf("                                                ");// bucle para poder introducir los espacios entre los grupos
+	printf("%s",clase[1].elemento);
+	printf("\n");
+		
+	for(k=2 ; k<=3; k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+		
+	printf("                            ");
+		
+	for(k=4 ; k<=9 ;k++){
+			
+		printf("%s  ", clase[k].elemento);
+	}
+		
+	printf("\n");
+		
+	for(k=10 ; k<=11; k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+		
+	printf("                            ");
+		
+	for(k=12 ; k<=17 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+		
+	printf("\n");
+		
+	for(k=18 ; k<=35 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+	printf("\n");
+		
+	for(k=36 ; k<=53 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+
+	printf("\n");
+	
+	for(k=54 ; k<=71 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+	
+	printf("\n");
+	
+		
+	for(k=72 ; k<=89 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+
+	printf("\n");
+	printf("      ");
+	
+	for(k=90 ; k<=103 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+	
+	printf("\n");
+	printf("      ");
+	
+	for(k=104 ; k<=nelemento-1 ;k++){
+			
+		printf("%s ", clase[k].elemento);
+	}
+	
+	printf("\n");	
+	
+//	printf("%s",clase[0].elemento);
+	
+	//-------------------------------------------------------------------------------
+	
 	
 	printf("------------------------------------------\n");
 	printf("------Programa de la Tabla Periodica------\n");
