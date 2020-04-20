@@ -1,27 +1,46 @@
 #include <stdio.h>
 #include <string.h>
 
-//Trabajo que busca informar sobre datos de la tabla periódica con introdución de elemento
-//mostrando la tabla y datos.
-
-
 
 struct TElemento {
 	
 	char elemento[3];
 };
 
+
 int main(){
 	
-	int k,nelemento = 0;
+	printf("------------------------------------------\n");
+	printf("------Programa de la Tabla Periodica------\n");
+	printf("------------------------------------------\n\n\n");
+	
+	printf("Menu de opciones.\n\n");
+	
+	printf("\t1. Introduce tus credenciales.\n\n");
+	
+	printf("\t2. Descripcion breve de la tabla periodica.\n\n");
+	
+	printf("\t3. Introduce el numero del elemento y te decimos grupo y periodo.\n\n");
+	
+	printf("\t4. Introduce el nombre del elemento y te damos una breve descripcion.\n\n");
+	
+	printf("\t5. Cerrar el programa.\n\n");
+	
+	//------------------------------------------------------------------------------------------------------------------
+	
+	printf("--------------------------------------------------------------------------------\n\n");
+	
+	int opcion,numero;
 	
 	struct TElemento clase[500];
 	
-	FILE*pfichero;
+	int i,nelemento = 0;
+	
+		FILE*pfichero;
 	//------------------------------------------------------------------------------	
 	pfichero = fopen("Tabla.txt","r");
 	
-	if(pfichero == NULL){
+		if(pfichero == NULL){
 		
 		printf("No se ha podido crear el fichero.\n");
 		return 0;
@@ -33,12 +52,14 @@ int main(){
 		
 	}
 	
-	// Utilizamos un solo iterador puesto que hacemos un solo vector de estructuras con una sola clase
 	
 	fclose(pfichero);
 	
-	printf("%s",clase[0].elemento);// Los dos primeros elementos los escribimos fuera del 
-	printf("                                                ");// bucle para poder introducir los espacios entre los grupos
+	int k; //iteradores
+	
+		
+	printf("%s",clase[0].elemento);
+	printf("                                                ");
 	printf("%s",clase[1].elemento);
 	printf("\n");
 		
@@ -116,31 +137,9 @@ int main(){
 	
 //	printf("%s",clase[0].elemento);
 	
-	//-------------------------------------------------------------------------------
-	
-	
-	printf("------------------------------------------\n");
-	printf("------Programa de la Tabla Periodica------\n");
-	printf("------------------------------------------\n\n\n");
-	
-	printf("Menu de opciones.\n\n");
-	
-	printf("\t1. Introduce tus credenciales.\n\n");
-	
-	printf("\t2. Descripcion breve de la tabla periodica.\n\n");
-	
-	printf("\t3. Introduce el numero del elemento y te decimos grupo y periodo.\n\n");
-	
-	printf("\t4. Introduce el nombre del elemento y te damos una breve descripcion.\n\n");
-	
-	printf("\t5. Cerrar el programa.\n\n");
-	
-	//------------------------------------------------------------------------------------------------------------------
-	
-	printf("--------------------------------------------------------------------------------\n\n");
-	
-	int opcion,nelemento;
-	
+	//-------------------------------------------------------------------------------	
+
+
 	printf("Introduce una de las opciones del menu\n");
 	
 	scanf( "%d" , &opcion );
@@ -159,7 +158,7 @@ int main(){
 			break;
 		
 			case 3:printf("Indica el numero que quieres.\n");
-				   scanf("%d",&nelemento);
+				   scanf("%d",&numero);
 			break;
 		
 			case 4:printf("Introduce el nombre abreviado ( Ejemplo-->Sodio: Na).\n");
@@ -172,12 +171,19 @@ int main(){
 			
 			scanf( "%d" , &opcion );
 			
-			//return 0;
+			return 0;
+			
+			
 			//system("pause");
+		
 		}
 		
+		
+		
 	}while(opcion < 1 && opcion > 5);
-
+	
+	
+	
 	//system("cls");
 	
 }
