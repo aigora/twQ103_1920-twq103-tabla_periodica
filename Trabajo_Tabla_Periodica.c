@@ -15,6 +15,8 @@ int main(){
 	
 	int k,nelemento = 0;
 	
+	struct TElemento clase[500];
+	
 	FILE*pfichero;
 	//------------------------------------------------------------------------------	
 	pfichero = fopen("Tabla.txt","r");
