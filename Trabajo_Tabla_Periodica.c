@@ -7,8 +7,102 @@ struct TElemento {
 	char elemento[3];
 };
 
+//declaración de funciones
+void dibujamenu();
+int tablaperiodica(struct TElemento clase[]);
+
 
 int main(){
+	
+	
+	int opcion,numero;
+	
+	struct TElemento clase[500];
+	
+	int i,nelemento = 0;
+	
+	int tabla;
+	
+	FILE*pfichero;
+	
+	//------------------------------------------------------------------------------	
+	pfichero = fopen("Tabla.txt","r");
+	
+	if(pfichero == NULL){
+		
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+	
+	while(fscanf(pfichero, "%s" , clase[nelemento].elemento) != EOF){
+		
+		nelemento++;
+		
+	}
+	
+	
+	fclose(pfichero);
+	
+	int k; //iteradores
+	
+	dibujamenu();
+	
+	tabla = tablaperiodica(clase);	
+		
+
+
+	printf("Introduce una de las opciones del menu\n");
+	
+	scanf( "%d" , &opcion );
+	
+	
+	do{
+		
+		system("cls");
+		
+		switch(opcion){
+		
+			case 1:printf("Introduce tus credenciales.\n");
+			break;
+		
+			case 2:printf("La tabla periodica fue inventada por Mendeliev en...\n");
+			break;
+		
+			case 3:printf("Indica el numero que quieres.\n");
+				   scanf("%d",&numero);
+			break;
+		
+			case 4:printf("Introduce el nombre abreviado ( Ejemplo-->Sodio: Na).\n");
+			break;
+		
+			case 5:printf("Gracias por haber usado nuestro programa.\n");
+			break;
+		
+			default: printf("Por favor introduzca un valor entre 1 y 5.\n\n");
+			
+			scanf( "%d" , &opcion );
+			
+			return 0;
+			
+			
+			//system("pause");
+		
+		}
+		
+		
+		
+	}while(opcion < 1 && opcion > 5);
+	
+	
+	
+	//system("cls");
+	
+}
+
+
+
+void dibujamenu(){
+	
 	
 	printf("------------------------------------------\n");
 	printf("------Programa de la Tabla Periodica------\n");
@@ -26,38 +120,13 @@ int main(){
 	
 	printf("\t5. Cerrar el programa.\n\n");
 	
-	//------------------------------------------------------------------------------------------------------------------
-	
 	printf("--------------------------------------------------------------------------------\n\n");
+}
+
+int tablaperiodica(struct TElemento clase[]){
 	
-	int opcion,numero;
+	int k,nelemento=118;
 	
-	struct TElemento clase[500];
-	
-	int i,nelemento = 0;
-	
-		FILE*pfichero;
-	//------------------------------------------------------------------------------	
-	pfichero = fopen("Tabla.txt","r");
-	
-		if(pfichero == NULL){
-		
-		printf("No se ha podido crear el fichero.\n");
-		return 0;
-	}
-	
-	while(fscanf(pfichero, "%s" , clase[nelemento].elemento) != EOF){
-		
-		nelemento++;
-		
-	}
-	
-	
-	fclose(pfichero);
-	
-	int k; //iteradores
-	
-		
 	printf("%s",clase[0].elemento);
 	printf("                                                ");
 	printf("%s",clase[1].elemento);
@@ -134,56 +203,5 @@ int main(){
 	}
 	
 	printf("\n");	
-	
-//	printf("%s",clase[0].elemento);
-	
-	//-------------------------------------------------------------------------------	
-
-
-	printf("Introduce una de las opciones del menu\n");
-	
-	scanf( "%d" , &opcion );
-	
-	
-	do{
-		
-		system("cls");
-		
-		switch(opcion){
-		
-			case 1:printf("Introduce tus credenciales.\n");
-			break;
-		
-			case 2:printf("La tabla periodica fue inventada por Mendeliev en...\n");
-			break;
-		
-			case 3:printf("Indica el numero que quieres.\n");
-				   scanf("%d",&numero);
-			break;
-		
-			case 4:printf("Introduce el nombre abreviado ( Ejemplo-->Sodio: Na).\n");
-			break;
-		
-			case 5:printf("Gracias por haber usado nuestro programa.\n");
-			break;
-		
-			default: printf("Por favor introduzca un valor entre 1 y 5.\n\n");
-			
-			scanf( "%d" , &opcion );
-			
-			return 0;
-			
-			
-			//system("pause");
-		
-		}
-		
-		
-		
-	}while(opcion < 1 && opcion > 5);
-	
-	
-	
-	//system("cls");
 	
 }
