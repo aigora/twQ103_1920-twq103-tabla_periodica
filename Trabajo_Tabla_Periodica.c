@@ -1,15 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
-
+//Tabla 
 struct TElemento {
 	
 	char elemento[3];
+	char elementos[50];
+	char simbolo[10];
+	float NAtomico;
+	float PesoAtomico;
+	int periodo;
+	int grupo;
+	
 };
+
+struct TCredenciales{
+	
+	char nombre[50];
+	char apellidos[100];
+};
+
 
 //declaración de funciones
 void dibujamenu();
 int tablaperiodica(struct TElemento clase[]);
+int Credenciales(struct TCredenciales vector[]);
+
 
 
 int main(){
@@ -19,29 +35,52 @@ int main(){
 	
 	struct TElemento clase[500];
 	
+	struct TCredenciales vector[1000];
+	
 	int i,nelemento = 0;
 	
-	int tabla;
+	int tabla, credenciales;
 	
-	FILE*pfichero;
+	FILE*pfichero1;
+	
+	FILE*pfichero2;
+	
+	FILE*pfichero3;
 	
 	//------------------------------------------------------------------------------	
-	pfichero = fopen("Tabla.txt","r");
+	pfichero1 = fopen("Tabla.txt","r");
 	
-	if(pfichero == NULL){
+	if(pfichero1 == NULL){
 		
 		printf("No se ha podido crear el fichero.\n");
 		return 0;
 	}
 	
-	while(fscanf(pfichero, "%s" , clase[nelemento].elemento) != EOF){
+	pfichero2 = fopen("Elementos.txt","r");
+	
+	if(pfichero2 == NULL){
 		
-		nelemento++;
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+	
+	pfichero3 = fopen("Credenciales.txt","a+");
+	
+	if(pfichero3 == NULL){
 		
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+	
+	while(fscanf(pfichero1, "%s" , clase[nelemento].elemento) != EOF){
+		
+		nelemento++;	
 	}
 	
 	
-	fclose(pfichero);
+	fclose(pfichero1);
+	
+	fclose(pfichero2);
 	
 	int k; //iteradores
 	
@@ -63,12 +102,13 @@ int main(){
 		switch(opcion){
 		
 			case 1:printf("Introduce tus credenciales.\n");
+				   credenciales = Credenciales(vector);
 			break;
 		
-			case 2:printf("La tabla periodica fue inventada por Mendeliev en...\n");
+			case 2:printf("MIrar credenciales previamente introducidas.\n");
 			break;
 		
-			case 3:printf("Indica el numero que quieres.\n");
+			case 3:printf("Indica el numero de un elemento y te decimos informcaion de él.\n");
 				   scanf("%d",&numero);
 			break;
 		
@@ -197,11 +237,31 @@ int tablaperiodica(struct TElemento clase[]){
 	printf("\n");
 	printf("      ");
 	
-	for(k=104 ; k<=nelemento-1 ;k++){
+	for(k=104 ; k<=117/*nelemento-1*/ ;k++){
 			
 		printf("%s ", clase[k].elemento);
 	}
 	
 	printf("\n");	
 	
+}
+
+int Credenciales(struct TCredenciales vector[]){
+	
+	int personas,i;
+	
+	FILE*pfichero3;
+	
+	pfichero3 = fopen("Credenciales.txt","a+");
+	
+	printf("Cuantas credenciales(personas) quieres meter:\n");
+	scanf("%d",&personas);
+	
+	for(i=0 ; i<=personas ; i++){
+
+		fprintf( pfichero3, "%c	%c", vector[i].nombre, vector[i].apellidos );
+		
+	}
+	
+	//return 0;
 }
