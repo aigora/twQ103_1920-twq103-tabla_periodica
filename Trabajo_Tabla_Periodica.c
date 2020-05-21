@@ -136,7 +136,7 @@ int main(){
 		
 		}
 		
-	}while(opcion!=5);
+	}while(opcion!=6);
 	
 	
 	
