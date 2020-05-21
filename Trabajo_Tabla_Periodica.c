@@ -103,10 +103,15 @@ int main(){
 		
 	
 	do{
-		printf("\nIntroduce una de las opciones del menu\n");
+		printf("\n\nIntroduce una de las opciones del menu (0 para ver las opciones)\n");
 		scanf( "%d" , &opcion );
 		switch(opcion){
-		
+			
+			case 0:
+				system("cls");
+				dibujamenu();
+			break;
+			
 			case 1:printf("Introduce tus credenciales.\n");
 				   credenciales = Credenciales(vector);
 			break;
@@ -130,7 +135,7 @@ int main(){
 			case 6:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
-			default: printf("Por favor introduzca un valor entre 1 y 5.\n");
+			default: printf("Por favor introduzca un valor entre 1 y 6.\n");
 			
 			//
 		
@@ -311,11 +316,13 @@ char elementos(struct TElementos elemento[]){
 
 char verCredenciales(struct TCredenciales vector[]){
 	
+	system("cls");
 	int i, j=0;
-	
 	FILE*pfichero3;
 	
+	
 	pfichero3 = fopen("Credenciales.txt","a+");
+	
 	
 	while(fscanf(pfichero3, "%s %s\n" , vector[j].nombre, vector[j].apellidos) != EOF){
 		
@@ -433,7 +440,7 @@ void Cuestionario1(){
 
 void Cuestionario2(){
 	
-		char simbolo;
+	char simbolo;
 	int h, ne, bi, cl, ba, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
 
 	system("cls");
