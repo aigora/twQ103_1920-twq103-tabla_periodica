@@ -292,6 +292,7 @@ char Credenciales(struct TCredenciales vector[]){
 		
 	}
 	
+	fclose(pfichero3);
 	//return 0;
 }
 
@@ -301,8 +302,6 @@ char elementos(struct TElementos elemento[]){
 
 
 char verCredenciales(struct TCredenciales vector[]){
-	
-	system("Cls");
 	
 	int i, j=0;
 	
@@ -317,14 +316,9 @@ char verCredenciales(struct TCredenciales vector[]){
 	}
 	
 	for(i=0 ; i<j ; i++){
-		
 		fflush(stdin);
-		printf("%s %s",  vector[i].nombre, vector[i].apellidos);
+		printf("%s %s\n",  vector[i].nombre, vector[i].apellidos);
 	}
 	
-	
-	
 }
-
-
 
