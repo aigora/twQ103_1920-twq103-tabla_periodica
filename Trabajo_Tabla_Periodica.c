@@ -128,7 +128,7 @@ int main(){
 			case 6:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
-			default: printf("Por favor introduzca un valor entre 1 y 5.\n");
+			default: printf("Por favor introduzca un valor entre 1 y 6.\n");
 			
 			//
 		
