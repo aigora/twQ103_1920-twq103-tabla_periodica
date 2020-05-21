@@ -317,8 +317,7 @@ char verCredenciales(struct TCredenciales vector[]){
 	
 	for(i=0 ; i<j ; i++){
 		fflush(stdin);
-		printf("%s %s\n",  vector[i].nombre, vector[i].apellidos);
+		printf("%d.- %s %s\n", i+1, vector[i].nombre, vector[i].apellidos);
 	}
 	
 }
-
