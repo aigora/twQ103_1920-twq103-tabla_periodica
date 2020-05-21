@@ -28,7 +28,8 @@ char tablaperiodica(struct TTabla clase[]);
 char Credenciales(struct TCredenciales vector[]);
 char elementos(struct TElementos elemento[]);
 char verCredenciales(struct TCredenciales vector[]);
-
+void Cuestionario1();
+void Cuestionario2();
 
 
 int main(){
@@ -118,10 +119,13 @@ int main(){
 				   scanf("%d",&numero);
 			break;
 		
-			case 4:printf("Introduce el nombre abreviado ( Ejemplo-->Sodio: Na).\n");
+			case 4:printf("Ha entrado al Cuestionario 1.\n");
 			break;
 		
-			case 5:printf("Gracias por haber usado nuestro programa.\n");
+			case 5:printf("Ha entrado al Cuestionario 2.\n");
+			break;	
+		
+			case 6:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
 			default: printf("Por favor introduzca un valor entre 1 y 5.\n");
@@ -155,9 +159,11 @@ void dibujamenu(){
 	
 	printf("\t3. Introduce el numero del elemento y te decimos grupo y periodo.\n\n");
 	
-	printf("\t4. Introduce el nombre del elemento y te damos una breve descripcion.\n\n");
+	printf("\t4. Realizar Cuestionario 1.\n\n");
 	
-	printf("\t5. Cerrar el programa.\n\n");
+	printf("\t5. Realizar Cuestionario 2.\n\n");
+	
+	printf("\t6. Cerrar el programa.\n\n");
 	
 	printf("--------------------------------------------------------------------------------\n\n");
 }
@@ -321,3 +327,196 @@ char verCredenciales(struct TCredenciales vector[]){
 	}
 	
 }
+
+void Cuestionario1(){
+	
+	char simbolo ,platino[5], platinosol[5]= "Pt", fluor, plata[5], platasol[5]= "Ag",  rodio[5], rodiosol[5]= "Rh", wolframio ;
+	int resultado, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
+	
+	
+	printf("___PRIMER CUESTIONARIO___\n\n");
+	
+	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
+	
+	fflush(stdin);
+	
+	//1PREGUNNTA
+	printf("Que simbolo tiene el elemento quimico platino \n\n");
+	gets(platino);
+    
+    resultado = strcmp(platino, platinosol);
+	if (resultado == 0) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+    
+    
+    //2PREGUNNTA
+    printf("Que simbolo tiene el elemento quimico fluor \n\n");
+	scanf("%c",&fluor);
+	
+	if (fluor == 'F') {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	fflush(stdin);
+	
+    //3PREGUNNTA
+    printf("Que simbolo tiene el elemento quimico plata \n\n");
+	gets(plata);
+    
+    resultado = strcmp(plata, platasol);
+	if (resultado == 0) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	//4PREGUNNTA
+	printf("Que simbolo tiene el elemento quimico rodio \n\n");
+	gets(rodio);
+    
+    resultado = strcmp(rodio, rodiosol);
+	if (resultado == 0) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	//5PREGUNNTA
+	printf("Que simbolo tiene el elemento quimico wolframio \n\n");
+	scanf("%c",&wolframio);
+	
+	if (wolframio == 'W') {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+    
+    
+    printf("Tus respuestas acertadas han sido %i\n\n", aciertos);
+    printf("Tus respuestas erroneas han sido %i\n\n", errores);
+    
+    
+	nota=contAciertos-contErrores;
+	if (nota<0){
+		nota=0;
+	}
+    printf("Tu calificacion es: %i", nota);
+}
+
+void Cuestionario2(){
+	
+		char simbolo;
+	int h, ne, bi, cl, ba, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
+
+	
+	printf("___SEGUNDO CUESTIONARIO___\n\n");
+	
+	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
+	
+	
+	//1PREGUNNTA
+	printf("Escribe cual es el numero atomico del Hidrogeno \n\n");
+	scanf("%i",&h);
+    
+	if (h == 1) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+    
+    //2PREGUNNTA
+	printf("Escribe cual es el numero atomico del Neon \n\n");
+	scanf("%i",&ne);
+    
+	if(ne == 10){
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	//3PREGUNNTA
+	printf("Escribe cual es el numero atomico del Bismuto \n\n");
+	scanf("%i",&bi);
+    
+	if (bi == 83) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	//4PREGUNNTA
+	printf("Escribe cual es el numero atomico del Cloro \n\n");
+	scanf("%i",&cl);
+    
+	if (cl == 17){
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+	
+	//5PREGUNNTA
+	printf("Escribe cual es el numero atomico del Bario \n\n");
+	scanf("%i",&ba);
+    
+	if (ba == 56) {
+		printf("VERDADERO\n");
+		contAciertos+=2;
+		aciertos++;
+	} else {
+		printf("FALSO\n");
+		contErrores++;
+		errores++;
+	}
+    
+    printf("Tus respuestas acertadas han sido %i\n\n", aciertos);
+    printf("Tus respuestas erroneas han sido %i\n\n", errores);
+    
+	nota=contAciertos-contErrores;
+	if (nota<0){
+		nota=0;
+	}
+    printf("Tu calificacion es: %i", nota);
+    
+}
+
