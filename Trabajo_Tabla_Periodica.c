@@ -120,15 +120,17 @@ int main(){
 			break;
 		
 			case 4:printf("Ha entrado al Cuestionario 1.\n");
+				   Cuestionario1();
 			break;
 		
 			case 5:printf("Ha entrado al Cuestionario 2.\n");
+				   Cuestionario2();
 			break;	
 		
 			case 6:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
-			default: printf("Por favor introduzca un valor entre 1 y 6.\n");
+			default: printf("Por favor introduzca un valor entre 1 y 5.\n");
 			
 			//
 		
@@ -333,6 +335,7 @@ void Cuestionario1(){
 	char simbolo ,platino[5], platinosol[5]= "Pt", fluor, plata[5], platasol[5]= "Ag",  rodio[5], rodiosol[5]= "Rh", wolframio ;
 	int resultado, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
 	
+	system("cls");
 	
 	printf("___PRIMER CUESTIONARIO___\n\n");
 	
@@ -433,6 +436,7 @@ void Cuestionario2(){
 		char simbolo;
 	int h, ne, bi, cl, ba, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
 
+	system("cls");
 	
 	printf("___SEGUNDO CUESTIONARIO___\n\n");
 	
@@ -519,4 +523,3 @@ void Cuestionario2(){
     printf("Tu calificacion es: %i", nota);
     
 }
-
