@@ -1,45 +1,49 @@
 #include <stdio.h>
 #include <string.h>
 
-//Tabla 
-struct TElemento {
-	
+//Tabla
+
+struct TTabla {
 	char elemento[3];
-	char elementos[50];
-	char simbolo[10];
-	float NAtomico;
-	float PesoAtomico;
-	int periodo;
-	int grupo;
-	
 };
 
 struct TCredenciales{
-	
 	char nombre[50];
 	char apellidos[100];
+};
+
+struct TElementos{
+	char elemento[50];
+	char simbolo[2];
+	int nAtomico;
+	float masaAtomica;
+	int periodo;
+	int grupo;
 };
 
 
 //declaración de funciones
 void dibujamenu();
-int tablaperiodica(struct TElemento clase[]);
-int Credenciales(struct TCredenciales vector[]);
+char tablaperiodica(struct TTabla clase[]);
+char Credenciales(struct TCredenciales vector[]);
+char elementos(struct TElementos elemento[]);
+char verCredenciales(struct TCredenciales vector[]);
 
 
 
 int main(){
 	
-	
 	int opcion,numero;
 	
-	struct TElemento clase[500];
+	struct TTabla clase[500];
 	
 	struct TCredenciales vector[1000];
 	
+	struct TElementos elemento[1000];
+	
 	int i,nelemento = 0;
 	
-	int tabla, credenciales;
+	int tabla, credenciales, vercredenciales;
 	
 	FILE*pfichero1;
 	
@@ -77,38 +81,40 @@ int main(){
 		nelemento++;	
 	}
 	
+	/*i=0;
+	
+	while(fscanf(pfichero2, "%s" , elemento[i].elemento)!= EOF){
+			i++;
+	}
+	
+	printf("%d\n",i);*/
+
+
 	
 	fclose(pfichero1);
 	
 	fclose(pfichero2);
 	
-	int k; //iteradores
 	
 	dibujamenu();
 	
 	tabla = tablaperiodica(clase);	
 		
-
-
-	printf("Introduce una de las opciones del menu\n");
-	
-	scanf( "%d" , &opcion );
-	
 	
 	do{
-		
-		system("cls");
-		
+		printf("\nIntroduce una de las opciones del menu\n");
+		scanf( "%d" , &opcion );
 		switch(opcion){
 		
 			case 1:printf("Introduce tus credenciales.\n");
 				   credenciales = Credenciales(vector);
 			break;
 		
-			case 2:printf("MIrar credenciales previamente introducidas.\n");
+			case 2:printf("Mirar credenciales previamente introducidas.\n");
+					vercredenciales = verCredenciales(vector);
 			break;
 		
-			case 3:printf("Indica el numero de un elemento y te decimos informcaion de él.\n");
+			case 3:printf("Indica el numero de un elemento y te decimos informacion de el.\n");
 				   scanf("%d",&numero);
 			break;
 		
@@ -118,20 +124,13 @@ int main(){
 			case 5:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
-			default: printf("Por favor introduzca un valor entre 1 y 5.\n\n");
+			default: printf("Por favor introduzca un valor entre 1 y 5.\n");
 			
-			scanf( "%d" , &opcion );
-			
-			return 0;
-			
-			
-			//system("pause");
+			//
 		
 		}
 		
-		
-		
-	}while(opcion < 1 && opcion > 5);
+	}while(opcion!=5);
 	
 	
 	
@@ -152,7 +151,7 @@ void dibujamenu(){
 	
 	printf("\t1. Introduce tus credenciales.\n\n");
 	
-	printf("\t2. Descripcion breve de la tabla periodica.\n\n");
+	printf("\t2. Mirar credenciales previamente introducidas.\n\n");
 	
 	printf("\t3. Introduce el numero del elemento y te decimos grupo y periodo.\n\n");
 	
@@ -163,90 +162,118 @@ void dibujamenu(){
 	printf("--------------------------------------------------------------------------------\n\n");
 }
 
-int tablaperiodica(struct TElemento clase[]){
+char tablaperiodica(struct TTabla clase[]){
 	
-	int k,nelemento=118;
+	int k,nelemento=118,longitud;
 	
 	printf("%s",clase[0].elemento);
-	printf("                                                ");
+	printf("                                                  ");
 	printf("%s",clase[1].elemento);
 	printf("\n");
 		
-	for(k=2 ; k<=3; k++){
-			
+	for(k=2; k<=3; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 		
-	printf("                            ");
+	printf("                              ");
 		
-	for(k=4 ; k<=9 ;k++){
-			
-		printf("%s  ", clase[k].elemento);
-	}
-		
-	printf("\n");
-		
-	for(k=10 ; k<=11; k++){
-			
+	for(k=4; k<=9; k++){
 		printf("%s ", clase[k].elemento);
-	}
-		
-	printf("                            ");
-		
-	for(k=12 ; k<=17 ;k++){
-			
-		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 		
 	printf("\n");
 		
-	for(k=18 ; k<=35 ;k++){
-			
+	for(k=10; k<=11; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
+		
+	printf("                              ");
+		
+	for(k=12; k<=17; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+		
 	printf("\n");
 		
-	for(k=36 ; k<=53 ;k++){
-			
+	for(k=18; k<=35; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+	
+	printf("\n");
+		
+	for(k=36; k<=53; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 
 	printf("\n");
 	
-	for(k=54 ; k<=71 ;k++){
-			
+	for(k=54; k<=71; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 	
 	printf("\n");
-	
 		
-	for(k=72 ; k<=89 ;k++){
-			
+	for(k=72; k<=89; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 
-	printf("\n");
-	printf("      ");
+	printf("\n\n      ");
 	
-	for(k=90 ; k<=103 ;k++){
-			
+	for(k=90; k<=103; k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
 	
-	printf("\n");
-	printf("      ");
+	printf("\n      ");
 	
-	for(k=104 ; k<=117/*nelemento-1*/ ;k++){
-			
+	for(k=104; k<=nelemento-1 ;k++){
 		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
 	}
-	
 	printf("\n");	
-	
 }
 
-int Credenciales(struct TCredenciales vector[]){
+char Credenciales(struct TCredenciales vector[]){
+	
+	system("cls");
 	
 	int personas,i;
 	
@@ -254,14 +281,50 @@ int Credenciales(struct TCredenciales vector[]){
 	
 	pfichero3 = fopen("Credenciales.txt","a+");
 	
-	printf("Cuantas credenciales(personas) quieres meter:\n");
+	printf("Cuantas credenciales (personas) quieres meter:\n");
 	scanf("%d",&personas);
 	
-	for(i=0 ; i<=personas ; i++){
-
-		fprintf( pfichero3, "%c	%c", vector[i].nombre, vector[i].apellidos );
+	for(i=0 ; i<personas ; i++){
+		
+		fflush(stdin);
+		scanf("%s %s",vector[i].nombre, vector[i].apellidos);
+		fprintf( pfichero3, "%s	%s\n", vector[i].nombre, vector[i].apellidos );
 		
 	}
 	
 	//return 0;
 }
+
+char elementos(struct TElementos elemento[]){
+	
+}
+
+
+char verCredenciales(struct TCredenciales vector[]){
+	
+	system("Cls");
+	
+	int i, j=0;
+	
+	FILE*pfichero3;
+	
+	pfichero3 = fopen("Credenciales.txt","a+");
+	
+	while(fscanf(pfichero3, "%s %s\n" , vector[j].nombre, vector[j].apellidos) != EOF){
+		
+		j++;	
+		
+	}
+	
+	for(i=0 ; i<j ; i++){
+		
+		fflush(stdin);
+		printf("%s %s",  vector[i].nombre, vector[i].apellidos);
+	}
+	
+	
+	
+}
+
+
+
