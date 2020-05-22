@@ -1,7 +1,25 @@
+// TRABAJO ----->  Tabla Periodica
+
+/*Programa que nos aporta informacion sobre la tabla periodica e incluye algunos cuestionarios a realizar.
+  El programa posee varias opciones, que voy a escribir brevemente para que el usuario tenga el trabajo esquematizado y se sepa las funciones
+  que puede realizar:
+
+t1. Introduce tus credenciales.\n\n"); EN ESTA OPCION NOS PODEMOS REGISTRAR PUDIENDO PONER EL NUMERO DE PERSONAS QUE SE VAN A REGISTRAR	
+t2. Mirar credenciales previamente introducidas.\n\n");	ESTA OPCION NOS APORTA TODOS LOS USUARIOS QUE SE HAN IDO REGISTRANDO EN EL PROGRAMA
+t3. Introduce el numero del elemento y te decimos informacion sobre el.	OPCION EN LA CUAL, EL PROGRAMA NOS FACILITARA ALGUNOS DATOS BASICOS 
+																		SOBRE LOS ELEMNTOS DE LA TABLA PERIODICA QUE NOS AYUDARAN A LA REALIZACION 
+																		DE LOS CUESTIONARIOS PROPUESTOS EN LAS SIGUIENTES OPCIONES
+t4. Realizar Cuestionario 1. OPCION QUE TE DERIVA A UN SIMPLE CUESTIONARIO EL CUAL TE DARA TU CALIFICACION OBTENIDA
+t5. Realizar Cuestionario 2. TIENE LA MISMA FUNCIONALIDAD QUE LA ANTERIOR OPCIO PERO TENDREMOS DISTINTAS PREGUNTAS
+t6. Cerrar el programa.
+
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 
-//Tabla
+// Estructuras
 
 struct TTabla {
 	char elemento[3];
@@ -22,7 +40,8 @@ struct TElementos{
 };
 
 
-//declaración de funciones
+// Declaración de funciones
+
 void dibujamenu();
 void tablaperiodica(struct TTabla clase[]);
 void Credenciales(struct TCredenciales vector[]);
@@ -32,7 +51,9 @@ void Cuestionario1();
 void Cuestionario2();
 
 
-int main(){
+//------------------------------//
+
+int main(){ 
 	
 	int opcion,numero;
 	
@@ -52,7 +73,8 @@ int main(){
 	
 	FILE*pfichero3;
 	
-	//------------------------------------------------------------------------------	
+//------------------------------//	
+	
 	pfichero1 = fopen("Tabla.txt","r");
 	
 	if(pfichero1 == NULL){
@@ -149,7 +171,7 @@ int main(){
 
 
 
-void dibujamenu(){
+void dibujamenu(){ //Función que muestra el menu usuario
 	
 	
 	printf("------------------------------------------\n");
@@ -282,7 +304,7 @@ void tablaperiodica(struct TTabla clase[]){
 	printf("\n");	
 }
 
-void Credenciales(struct TCredenciales vector[]){
+void Credenciales(struct TCredenciales vector[]){ //Funcion que permite introducir credenciales 
 	
 	system("cls");
 	
@@ -308,7 +330,7 @@ void Credenciales(struct TCredenciales vector[]){
 	//return 0;
 }
 
-void elementos(struct TElementos elemento[]){
+void elementos(struct TElementos elemento[]){ // Funcion que detalla una serie de caracteristicas de los elementos quimicos, cuando el usuario introduce un numero atomico cualquiera de la tabla periodica
 	
 	system("cls");
 	int n;
@@ -334,7 +356,7 @@ void elementos(struct TElementos elemento[]){
 }
 
 
-void verCredenciales(struct TCredenciales vector[]){
+void verCredenciales(struct TCredenciales vector[]){ //Funcion que permite ver las credenciales que se han introducido anteriormente a la hora de usar el programa
 	
 	system("cls");
 	int i, j=0;
@@ -357,7 +379,7 @@ void verCredenciales(struct TCredenciales vector[]){
 	
 }
 
-void Cuestionario1(){
+void Cuestionario1(){ // Funcion Cuestionario 1
 	
 	char simbolo ,platino[5], platinosol[5]= "Pt", fluor, plata[5], platasol[5]= "Ag",  rodio[5], rodiosol[5]= "Rh", wolframio ;
 	int resultado, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
@@ -460,7 +482,7 @@ void Cuestionario1(){
     printf("Tu calificacion es: %i", nota);
 }
 
-void Cuestionario2(){
+void Cuestionario2(){ //Funcion Cuestionario 2
 	
 	char simbolo;
 	int h, ne, bi, cl, ba, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
