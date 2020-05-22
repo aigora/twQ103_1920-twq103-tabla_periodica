@@ -63,7 +63,7 @@ int main(){
 	
 	int i,nelemento = 0;
 	
-	int tabla /*,credenciales, vercredenciales*/;
+	int tabla ,credenciales, vercredenciales;
 	
 	FILE*pfichero1;
 	
