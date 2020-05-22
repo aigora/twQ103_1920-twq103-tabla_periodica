@@ -4,8 +4,8 @@
   El programa posee varias opciones, que voy a escribir brevemente para que el usuario tenga el trabajo esquematizado y se sepa las funciones
   que puede realizar:
 
-t1. Introduce tus credenciales.\n\n"); EN ESTA OPCION NOS PODEMOS REGISTRAR PUDIENDO PONER EL NUMERO DE PERSONAS QUE SE VAN A REGISTRAR	
-t2. Mirar credenciales previamente introducidas.\n\n");	ESTA OPCION NOS APORTA TODOS LOS USUARIOS QUE SE HAN IDO REGISTRANDO EN EL PROGRAMA
+t1. Introduce tus credenciales. EN ESTA OPCION NOS PODEMOS REGISTRAR PUDIENDO PONER EL NUMERO DE PERSONAS QUE SE VAN A REGISTRAR	
+t2. Mirar credenciales previamente introducidas. ESTA OPCION NOS APORTA TODOS LOS USUARIOS QUE SE HAN IDO REGISTRANDO EN EL PROGRAMA
 t3. Introduce el numero del elemento y te decimos informacion sobre el.	OPCION EN LA CUAL, EL PROGRAMA NOS FACILITARA ALGUNOS DATOS BASICOS 
 																		SOBRE LOS ELEMNTOS DE LA TABLA PERIODICA QUE NOS AYUDARAN A LA REALIZACION 
 																		DE LOS CUESTIONARIOS PROPUESTOS EN LAS SIGUIENTES OPCIONES
