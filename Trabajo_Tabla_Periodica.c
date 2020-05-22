@@ -382,7 +382,7 @@ void Cuestionario1(){ // Funcion Cuestionario 1
 	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
 	
 	
-	//1PREGUNNTA
+	//1PREGUNTA
 	printf("Que simbolo tiene el elemento quimico platino \n\n");
 	fflush(stdin);
 	gets(platino);
@@ -399,7 +399,7 @@ void Cuestionario1(){ // Funcion Cuestionario 1
 	}
     
     
-    //2PREGUNNTA
+    //2PREGUNTA
     printf("Que simbolo tiene el elemento quimico fluor \n\n");
     fflush(stdin);
 	scanf("%c",&fluor);
@@ -416,7 +416,7 @@ void Cuestionario1(){ // Funcion Cuestionario 1
 	
 	fflush(stdin);
 	
-    //3PREGUNNTA
+    //3PREGUNTA
     printf("Que simbolo tiene el elemento quimico plata \n\n");
     fflush(stdin);
 	gets(plata);
@@ -432,7 +432,7 @@ void Cuestionario1(){ // Funcion Cuestionario 1
 		errores++;
 	}
 	
-	//4PREGUNNTA
+	//4PREGUNTA
 	printf("Que simbolo tiene el elemento quimico rodio \n\n");
 	fflush(stdin);
 	gets(rodio);
@@ -448,7 +448,7 @@ void Cuestionario1(){ // Funcion Cuestionario 1
 		errores++;
 	}
 	
-	//5PREGUNNTA
+	//5PREGUNTA
 	printf("Que simbolo tiene el elemento quimico wolframio \n\n");
 	fflush(stdin);
 	scanf("%c",&wolframio);
@@ -485,7 +485,7 @@ void Cuestionario2(){ //Funcion Cuestionario 2
 	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
 	
 	
-	//1PREGUNNTA
+	//1PREGUNTA
 	printf("Escribe cual es el numero atomico del Hidrogeno \n\n");
 	scanf("%i",&h);
     
@@ -499,7 +499,7 @@ void Cuestionario2(){ //Funcion Cuestionario 2
 		errores++;
 	}
     
-    //2PREGUNNTA
+    //2PREGUNTA
 	printf("Escribe cual es el numero atomico del Neon \n\n");
 	scanf("%i",&ne);
     
@@ -513,7 +513,7 @@ void Cuestionario2(){ //Funcion Cuestionario 2
 		errores++;
 	}
 	
-	//3PREGUNNTA
+	//3PREGUNTA
 	printf("Escribe cual es el numero atomico del Bismuto \n\n");
 	scanf("%i",&bi);
     
@@ -527,7 +527,7 @@ void Cuestionario2(){ //Funcion Cuestionario 2
 		errores++;
 	}
 	
-	//4PREGUNNTA
+	//4PREGUNTA
 	printf("Escribe cual es el numero atomico del Cloro \n\n");
 	scanf("%i",&cl);
     
@@ -541,7 +541,7 @@ void Cuestionario2(){ //Funcion Cuestionario 2
 		errores++;
 	}
 	
-	//5PREGUNNTA
+	//5PREGUNTA
 	printf("Escribe cual es el numero atomico del Bario \n\n");
 	scanf("%i",&ba);
     
