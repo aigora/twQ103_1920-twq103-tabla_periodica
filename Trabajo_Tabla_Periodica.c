@@ -299,6 +299,7 @@ char Credenciales(struct TCredenciales vector[]){
 	
 	for(i=0 ; i<personas ; i++){
 		
+		printf("Nombre Apellido:\n");
 		fflush(stdin);
 		scanf("%s %s",vector[i].nombre, vector[i].apellidos);
 		fprintf( pfichero3, "%s	%s\n", vector[i].nombre, vector[i].apellidos );
